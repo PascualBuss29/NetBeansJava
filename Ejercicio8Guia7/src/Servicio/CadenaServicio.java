@@ -43,4 +43,63 @@ public class CadenaServicio {
         }
         return vocal;
     }
+
+    public void invertirFrase(Cadena c1) {
+        char letra;
+        for (int i = c1.getLongitud() - 1; i > 0; i--) {
+            letra = c1.getFrase().charAt(i);
+            System.out.print(letra);
+        }
+    }
+
+    public void vecesRepetido(Cadena c1) {
+        int cont = 0;
+        String let;
+        System.out.println("Ingrese una letra a buscar");
+        let = leer.next();
+        for (int i = 0; i < c1.getLongitud(); i++) {
+            if (c1.getFrase().substring(i, i + 1).equalsIgnoreCase(let)) {
+                cont++;
+            }
+        }
+    }
+
+    public void compararLongitud(Cadena c1) {
+        String frase2;
+        System.out.println("Ingrese una nueva frase");
+        frase2 = leer.next();
+        if (c1.getLongitud() == frase2.length()) {
+            System.out.println("La longitudes son iguales");
+        } else {
+            System.out.println("Las longitudes son distintas");
+        }
+    }
+
+    public void unirFrases(Cadena c1) {
+        String frase3;
+        System.out.println("Ingrese una nueva frase ");
+        frase3 = leer.next();
+        System.out.println(c1.getFrase().concat(frase3));
+    }
+
+    public void reemplazar(Cadena c1) {
+        String car, letra, nuevaCadena="";
+        System.out.println("Que letra de la frase queres cambiar");
+        letra = leer.next();
+        System.out.println("Ingrese un caracter");
+        car = leer.next();
+        for (int i = 0; i < c1.getLongitud(); i++) {
+             nuevaCadena = c1.getFrase().replace(car, letra);
+           
+        }
+         System.out.println(nuevaCadena);
+         
+    }
+    public boolean contiene(Cadena c1, String letra){
+        
+        boolean res = c1.getFrase().contains(letra);       
+        
+        return res;
+    }
+
 }
