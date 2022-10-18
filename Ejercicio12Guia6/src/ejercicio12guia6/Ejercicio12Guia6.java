@@ -5,6 +5,8 @@
  */
 package ejercicio12guia6;
 
+import Entidad.Persona;
+import Servicio.PersonaServicio;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -33,8 +35,14 @@ public class Ejercicio12Guia6 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       
-
+        PersonaServicio sp = new PersonaServicio();
+        Persona p1 = new Persona();
+        sp.crearPersona(p1);
+        System.out.println("El nombre es: " + p1.getNombre() + " La fecha de naciemiento es: " + p1.getFechaNacimiento());
+        System.out.println("La esdad es: "+sp.calcularEdad(p1) ); 
+        System.out.println("La nueva persona es menor?: "+ sp.menorQue(p1));
     }
 
-}
+    
+    }
+
