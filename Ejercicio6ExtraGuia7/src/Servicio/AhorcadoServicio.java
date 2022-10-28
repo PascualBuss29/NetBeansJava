@@ -52,8 +52,8 @@ public class AhorcadoServicio {
         System.out.println("Se encontraron: " + a1.getCantLetras() + "," + palabra.length());
     }
 
-    public int intentos(Ahorcado n1) {
-        return n1.getCantJugadas();
+    public void intentos() {
+        System.out.println("Te quedan: " + a1.getCantJugadas() + " intentos");
     }
 
     public void juego() {
@@ -70,11 +70,16 @@ public class AhorcadoServicio {
                 a1.setCantJugadas(a1.getCantJugadas() - 1);
             }
             encontradas();
-            System.out.println("Te quedan: " + a1.getCantJugadas() + "Oportunidades");
-
-        } while (a1.getCantJugadas() > 0 && a1.getCantJugadas() <= palabra.length());
-        if (a1.getCantLetras() == palabra.length()) {
-            System.out.println("Se encontraron todas las letras");
-        }
+            intentos();
+            System.out.println("Te quedan: " + a1.getCantJugadas() + " Oportunidades");
+            if (a1.getCantLetras() == palabra.length()) {
+                System.out.println("Se encontraron todas las letras");
+                a1.setCantJugadas(0);
+            } else if (a1.getCantJugadas() == 0) {
+                System.out.println("Ahorcado");
+            } else {
+                System.out.println("Sigue intentando");
+            }
+        } while (a1.getCantJugadas() != 0);
     }
 }

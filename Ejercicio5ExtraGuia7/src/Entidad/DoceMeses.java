@@ -43,7 +43,7 @@ public class DoceMeses {
 
     public void DoceMeses() {
         meses = new String[]{"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"};
-        mesSecreto = meses[4];
+        mesSecreto = meses[4-1];
     }
 
     public void adivinar() {
